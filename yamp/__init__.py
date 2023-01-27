@@ -129,6 +129,8 @@ def print_docstring(obj, file, depth, linkifier):
             inspect.Signature()
         )  # TODO: this is necessary for Cython classes, but it's not correct
     params_desc = {param.name: " ".join(param.desc) for param in doc["Parameters"]}
+    print('params_desc -- ', params_desc)
+    print('doc["Parameters"] -- ', doc["Parameters"])
 
     # Parameters
     if signature.parameters:
