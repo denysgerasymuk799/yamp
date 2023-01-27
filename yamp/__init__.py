@@ -68,6 +68,7 @@ class Linkifier:
                 index_module(submod_name, submod, path=path)
 
         for mod_name, mod in modules.items():
+            print('mod_name, mod -- ', mod_name, mod)
             index_module(mod_name, mod, path="")
 
         # Prepend the name of the library to each index entry
@@ -396,6 +397,7 @@ def print_library(library: str, output_dir: pathlib.Path, verbose=False):
     for mod_name, mod in inspect.getmembers(
         importlib.import_module(library), inspect.ismodule
     ):
+        print('mod_name, mod -- ', mod_name, mod)
         if mod_name.startswith("_") or mod_name == "api":
             continue
         if verbose:
