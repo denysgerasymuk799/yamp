@@ -111,6 +111,7 @@ def print_docstring(obj, file, depth, linkifier):
     """Prints a classes's docstring to a file."""
 
     doc = ClassDoc(obj) if inspect.isclass(obj) else FunctionDoc(obj)
+    print('doc -- ', doc)
 
     printf = functools.partial(print, file=file)
 
