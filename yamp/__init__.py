@@ -111,7 +111,6 @@ def print_docstring(obj, file, depth, linkifier):
     """Prints a classes's docstring to a file."""
 
     doc = ClassDoc(obj) if inspect.isclass(obj) else FunctionDoc(obj)
-    print('doc -- ', doc)
 
     printf = functools.partial(print, file=file)
 
@@ -130,8 +129,6 @@ def print_docstring(obj, file, depth, linkifier):
             inspect.Signature()
         )  # TODO: this is necessary for Cython classes, but it's not correct
     params_desc = {param.name: " ".join(param.desc) for param in doc["Parameters"]}
-    print('params_desc -- ', params_desc)
-    print('doc["Parameters"] -- ', doc["Parameters"])
 
     # Parameters
     if signature.parameters:
@@ -400,7 +397,6 @@ def print_library(library: str, output_dir: pathlib.Path, verbose=False):
     for mod_name, mod in inspect.getmembers(
         importlib.import_module(library), inspect.ismodule
     ):
-        print('mod_name, mod -- ', mod_name, mod)
         if mod_name.startswith("_") or mod_name == "api":
             continue
         if verbose:
