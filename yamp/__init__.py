@@ -34,13 +34,6 @@ class Linkifier:
             inspect.getmembers(importlib.import_module(f"{library}.api"), inspect.ismodule)
         ))
 
-        modules = {
-            "base": modules["base"],
-            "linear_model": modules["linear_model"],
-            "stream": modules["stream"],
-            "optim": modules["optim"],
-        }
-
         def index_module(mod_name, mod, path):
             path = os.path.join(path, mod_name)
             dotted_path = path.replace("/", ".")
