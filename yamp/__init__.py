@@ -68,7 +68,6 @@ class Linkifier:
                 index_module(submod_name, submod, path=path)
 
         for mod_name, mod in modules.items():
-            print('mod_name, mod -- ', mod_name, mod)
             index_module(mod_name, mod, path="")
 
         # Prepend the name of the library to each index entry
@@ -380,6 +379,7 @@ def print_module(mod, path, overview, linkifier, is_submodule=False, verbose=Fal
         )
 
     print("", file=overview)
+
 
 def print_library(library: str, output_dir: pathlib.Path, verbose=False):
 
